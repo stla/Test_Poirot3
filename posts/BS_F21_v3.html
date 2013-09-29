@@ -71,23 +71,19 @@ by performing the <em>binary splitting algorithm</em> with the <code>gmp</code> 
 
 <h2>Introductory example: Euler&#39;s approximation of \(\pi\)</h2>
 
-<p>The following formula is due to Euler: 
-$$
-\frac{\pi}{2} = 1 + \frac{1}{3} + \frac{1\times 2}{3\times 5} + 
+<p>The following formula is due to Euler 
+$$\frac{\pi}{2} = 1 + \frac{1}{3} + \frac{1\times 2}{3\times 5} + 
 \frac{1\times 2 \times 3}{3\times 5 \times 7} + \cdots </p>
 
 <ul>
-<li>\frac{n!}{3\times 5 \times 7 \times \cdots \times (2n+1)} + \cdots,
-\[
+<li>\frac{n!}{3\times 5 \times 7 \times \cdots \times (2n+1)} + \cdots,\[
 that is, $\pi = \lim S_n$ where
-\]
-\begin{aligned}
+\]\begin{aligned}
 S<em>n &amp; = 1 + \frac{u_1}{v_1} + \frac{u_1 u_2}{v_1v_2} + 
 \frac{u_1u_2 u_3}{v_1v_2v_3} + \cdots + 
 \frac{u_1u_2\ldots u</em>{n-1}u<em>n}{v_1v_2\ldots v</em>{n-1}v<em>n} \ 
 &amp; = 1 + \sum</em>{k=1}<sup>n</sup> \prod_{i=1}<sup>k\frac{u_i}{v_i}</sup> \
-\end{aligned}
-$$
+\end{aligned}$$
 with \(u_i=i\) and \(v_i=2i+1\).</li>
 </ul>
 
@@ -412,7 +408,8 @@ bs.exp.gmp &lt;- function(p, q, m) {
     }
     Sn &lt;- alpha/beta + 1
     eval.Sn &lt;- format(as.numeric(Sn), digits = 22)
-    out &lt;- switch(value, eval = eval.Sn, exact = Sn, both = list(Sn = Sn, eval.Sn = eval.Sn))
+    out &lt;- switch(value, eval = eval.Sn, exact = Sn, both = list(Sn = Sn, 
+        eval.Sn = eval.Sn))
     return(out)
 }
 </code></pre>
@@ -421,10 +418,8 @@ bs.exp.gmp &lt;- function(p, q, m) {
 
 <p>Now consider the <em>Gauss hypergeometric function</em>  \({}_2\!F_1\). 
 This is the function \({}_2\!F_1(\alpha,\beta,\gamma; \cdot)\)<br>
-with complex parameters \(\alpha\), \(\beta\),  \(\gamma \not\in \mathbb{Z}^-\) and complex variable \(z\)  defined for \(|z|<1\) as the sum of an absolute convergent series:
-\[
-{}_2\!F_1(\alpha,\beta,\gamma; z) = \sum_{n=0}^{\infty}\frac\frac{z^n}{n!},   
-\]
+with complex parameters \(\alpha\), \(\beta\),  \(\gamma \not\in \mathbb{Z}^-\) and complex variable \(z\)  defined for \(|z|<1\) as the sum of an absolute convergent series
+\[{}_2\!F_1(\alpha,\beta,\gamma; z) = \sum_{n=0}^{\infty}\frac\frac{z^n}{n!},\]
 and extended by analytical continuation in the complex plane with the cut 
 along \((1,+\infty)\). Here \({(a)}_n:=a(a+1)\cdots(a+n-1)\) denotes Pochhammer&#39;s symbol used 
 to represent the \(n\)-th ascending factorial of \(a\). . </p>
@@ -433,9 +428,11 @@ to represent the \(n\)-th ascending factorial of \(a\). . </p>
 \(\alpha,\beta,\gamma, z\) by manipulating only integer numbers. 
 This is performed by the R function below</p>
 
-<pre><code class="r">## rational approximation of 2F1(a1/a2, b1/b2, c1/c2; p/q) with gmp ##
+<pre><code class="r">## rational approximation of 2F1(a1/a2, b1/b2, c1/c2; p/q)
+## with gmp ##
 hypergeo_bs &lt;- function(a1, a2, b1, b2, c1, c2, p, q, m) {
-    u &lt;- function(i) c2 * (a1 + (i - 1) * a2) * (b1 + (i - 1) * b2) * p
+    u &lt;- function(i) c2 * (a1 + (i - 1) * a2) * (b1 + (i - 1) * 
+        b2) * p
     v &lt;- function(i) a2 * b2 * i * (c1 + (i - 1) * c2) * q
     bs.gmp(u, v, m)
 }
@@ -510,8 +507,8 @@ irred.frac &lt;- function(x, rnd = n.decimals(x)) {
         cv &lt;- x == out
         out &lt;- list(result = out, convergence = cv)
         if (!cv) {
-            out$convergence &lt;- paste(out$convergence, &quot; - m=&quot;, m, &quot; need to be increased&quot;, 
-                sep = &quot;&quot;)
+            out$convergence &lt;- paste(out$convergence, &quot; - m=&quot;, 
+                m, &quot; need to be increased&quot;, sep = &quot;&quot;)
         }
     }
     return(out)
@@ -554,15 +551,10 @@ Hypergeometric2F1(a, b, c, z)
 <p>Note that Robin Hankin&#39;s <code>gsl</code> package does an excellent job:</p>
 
 <pre><code class="r">library(gsl)
+hyperg_2F1(a, b, c, z)
 </code></pre>
 
-<pre><code>## Error: there is no package called &#39;gsl&#39;
-</code></pre>
-
-<pre><code class="r">hyperg_2F1(a, b, c, z)
-</code></pre>
-
-<pre><code>## Error: could not find function &quot;hyperg_2F1&quot;
+<pre><code>## [1] 8058
 </code></pre>
 
 </div>

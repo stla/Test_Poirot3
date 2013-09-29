@@ -23,21 +23,17 @@ This article was first published in [stla.overblog.com/](http://stla.overblog.co
 Introductory example: Euler's approximation of $\pi$
 ----------------------------------------
 
-The following formula is due to Euler: 
-$$
-\frac{\pi}{2} = 1 + \frac{1}{3} + \frac{1\times 2}{3\times 5} + 
+The following formula is due to Euler 
+$$\frac{\pi}{2} = 1 + \frac{1}{3} + \frac{1\times 2}{3\times 5} + 
 \frac{1\times 2 \times 3}{3\times 5 \times 7} + \cdots 
-+ \frac{n!}{3\times 5 \times 7 \times \cdots \times (2n+1)} + \cdots,
-$$
++ \frac{n!}{3\times 5 \times 7 \times \cdots \times (2n+1)} + \cdots,$$
 that is, $\pi = \lim S_n$ where
-$$
-\begin{aligned}
+$$\begin{aligned}
 S_n & = 1 + \frac{u_1}{v_1} + \frac{u_1 u_2}{v_1v_2} + 
 \frac{u_1u_2 u_3}{v_1v_2v_3} + \cdots + 
 \frac{u_1u_2\ldots u_{n-1}u_n}{v_1v_2\ldots v_{n-1}v_n} \\ 
 & = 1 + \sum_{k=1}^n \prod_{i=1}^k\frac{u_i}{v_i} \\
-\end{aligned}
-$$
+\end{aligned}$$
 with $u_i=i$ and $v_i=2i+1$.
 
 
@@ -410,7 +406,8 @@ bs.gmp <- function(u, v, m = 7, value = "eval") {
     }
     Sn <- alpha/beta + 1
     eval.Sn <- format(as.numeric(Sn), digits = 22)
-    out <- switch(value, eval = eval.Sn, exact = Sn, both = list(Sn = Sn, eval.Sn = eval.Sn))
+    out <- switch(value, eval = eval.Sn, exact = Sn, both = list(Sn = Sn, 
+        eval.Sn = eval.Sn))
     return(out)
 }
 ```
@@ -427,10 +424,8 @@ The Gauss hypergeometric function
 
 Now consider the *Gauss hypergeometric function*  ${}_2\!F_1$. 
 This is the function ${}_2\!F_1(\alpha,\beta,\gamma; \cdot)$  
-with complex parameters $\alpha$, $\beta$,  $\gamma \not\in \mathbb{Z}^-$ and complex variable $z$  defined for $|z|<1$ as the sum of an absolute convergent series:
-$$
-{}_2\!F_1(\alpha,\beta,\gamma; z) = \sum_{n=0}^{\infty}\frac{{(\alpha)}_{n}{(\beta)}_n}{{(\gamma)}_{n}}\frac{z^n}{n!},   
-$$
+with complex parameters $\alpha$, $\beta$,  $\gamma \not\in \mathbb{Z}^-$ and complex variable $z$  defined for $|z|<1$ as the sum of an absolute convergent series
+$${}_2\!F_1(\alpha,\beta,\gamma; z) = \sum_{n=0}^{\infty}\frac{{(\alpha)}_{n}{(\beta)}_n}{{(\gamma)}_{n}}\frac{z^n}{n!},$$
 and extended by analytical continuation in the complex plane with the cut 
 along $(1,+\infty)$. Here ${(a)}_n:=a(a+1)\cdots(a+n-1)$ denotes Pochhammer's symbol used 
 to represent the $n$-th ascending factorial of $a$. . 
@@ -441,9 +436,11 @@ This is performed by the R function below
 
 
 ```r
-## rational approximation of 2F1(a1/a2, b1/b2, c1/c2; p/q) with gmp ##
+## rational approximation of 2F1(a1/a2, b1/b2, c1/c2; p/q)
+## with gmp ##
 hypergeo_bs <- function(a1, a2, b1, b2, c1, c2, p, q, m) {
-    u <- function(i) c2 * (a1 + (i - 1) * a2) * (b1 + (i - 1) * b2) * p
+    u <- function(i) c2 * (a1 + (i - 1) * a2) * (b1 + (i - 1) * 
+        b2) * p
     v <- function(i) a2 * b2 * i * (c1 + (i - 1) * c2) * q
     bs.gmp(u, v, m)
 }
@@ -529,8 +526,8 @@ Hypergeometric2F1 <- function(a, b, c, z, m = 7, rnd.params = max(n.decimals(c(a
         cv <- x == out
         out <- list(result = out, convergence = cv)
         if (!cv) {
-            out$convergence <- paste(out$convergence, " - m=", m, " need to be increased", 
-                sep = "")
+            out$convergence <- paste(out$convergence, " - m=", 
+                m, " need to be increased", sep = "")
         }
     }
     return(out)
@@ -582,18 +579,11 @@ Note that Robin Hankin's `gsl` package does an excellent job:
 
 ```r
 library(gsl)
-```
-
-```
-## Error: there is no package called 'gsl'
-```
-
-```r
 hyperg_2F1(a, b, c, z)
 ```
 
 ```
-## Error: could not find function "hyperg_2F1"
+## [1] 8058
 ```
 
 
