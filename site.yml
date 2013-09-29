@@ -1,0 +1,12 @@
+title: Test Poirot
+tagline: test
+logo: assets/img/poirot.jpg 
+
+# Choose url: / for local development
+url: http://stla.github.com/Test_Poirot3/
+rawurl: https://raw.github.com/stla/Test_Poirot3/gh-pages/
+# url: /
+URL: http://github.com/ramnathv/poirot
+navigation: 
+  - {item: Home, href: index.html}
+  - {item: About, href: about.html}
