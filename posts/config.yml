@@ -15,7 +15,9 @@ url:
   assets: ../assets
 
 # WIDGETS
-widgets: [mathjax]
+widgets: [disqus, mathjax]
+disqus:
+  shortname: slidify
 
 
 
