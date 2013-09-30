@@ -1,6 +1,6 @@
 ---
 title: The binary splitting with the R `gmp` package - Application to the Gauss hypergeometric function
-date : 2012-12-14
+date : 2012-11-30
 --- &lead
 
 
