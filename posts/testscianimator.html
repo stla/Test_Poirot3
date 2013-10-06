@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reproducible Blogging with R Markdown</title>
+  <title>test animator</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="" />
   <meta name="author" content="">
   <link rel="shortcut icon" href="assets/img/07-10-06_2241.jpg">
   <link rel="alternate" type="application/rss+xml" href="">
-  <link href="libraries/frameworks/purus/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="libraries/frameworks/purus/css/bootstrap-responsive.min.css" rel="stylesheet" />
-  <link href="libraries/frameworks/purus/css/main.css" rel="stylesheet" />
-  <link href="libraries/highlighters/prettify/css/twitter-bootstrap.css" rel="stylesheet">
+  <link href="../libraries/frameworks/purus/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../libraries/frameworks/purus/css/bootstrap-responsive.min.css" rel="stylesheet" />
+  <link href="../libraries/frameworks/purus/css/main.css" rel="stylesheet" />
+  <link href="../libraries/highlighters/prettify/css/twitter-bootstrap.css" rel="stylesheet">
   <!-- IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,8 +29,8 @@
 	  #sidebar .sidebar-nav ul#links li a:hover { background: #01A9DB; }
     p {text-align: justify;}
   </style>
-  <link rel="stylesheet" href = "assets/css/custom.css">
-<link rel="stylesheet" href = "assets/css/ribbons.css">
+  <link rel="stylesheet" href = "../assets/css/custom.css">
+<link rel="stylesheet" href = "../assets/css/ribbons.css">
 
 </head>
 <body>
@@ -55,55 +55,47 @@
           <ol id="posts">
             <li class="post">
               <h3>
-                <a href="#">Reproducible Blogging with R Markdown</a>
+                <a href="#">test animator</a>
               </h3>
-              <span></span><br/>
-               <a class='label label-success' href='https://raw.github.com/stla/Test_Poirot3/gh-pages/index.Rmd'>Source</a>
-              
-<style>
-ul.posts {
-  margin-top: 15px;
-}
-ul.posts li {
-  list-style: none
-}
-ul.posts hr {
-  margin: 5px 5px;
-}
-ul.posts span {
-  font-size: 12px;
-  color: #999;
-}
-</style>
+              <span>2012-11-30</span><br/>
+               <a class='label label-success' href='https://raw.github.com/stla/Test_Poirot3/gh-pages/posts/testscianimator.Rmd'>Source</a>
+              <div class='lead'>
+<pre><code class="r">library(animation)
+opts_chunk$set(fig.path = &quot;assets/fig/testanimator-&quot;)
+opts_knit$set(animation.fun = hook_scianimator)
+</code></pre>
 
-<ul class="posts">
-   
- <li>
-  <span class='pull-right'>2012-11-30</span> 
-  <a href="http://stla.github.com/Test_Poirot3/posts/BS_F21_v3.html">The binary splitting with the R `gmp` package - Application to the Gauss hypergeometric function</a>
-  <hr/>
- </li>
- 
- <li>
-  <span class='pull-right'>2012-12-14</span> 
-  <a href="http://stla.github.com/Test_Poirot3/posts/Kantorovich.html">Using R to compute the Kantorovich distance</a>
-  <hr/>
- </li>
- 
- <li>
-  <span class='pull-right'>2012-11-30</span> 
-  <a href="http://stla.github.com/Test_Poirot3/posts/samplesize_mean.html">Sample size determination for a mean</a>
-  <hr/>
- </li>
- 
- <li>
-  <span class='pull-right'>2012-11-30</span> 
-  <a href="http://stla.github.com/Test_Poirot3/posts/testscianimator.html">test animator</a>
-  <hr/>
- </li>
+<pre><code class="r">ani.options(nmax = 50)  # create 50 image frames
+set.seed(20121106)
+brownian.motion(n = 20, pch = 21, cex = 4, col = &quot;red&quot;, bg = &quot;yellow&quot;, xlim = c(-10, 
+    10), ylim = c(-15, 15))
+</code></pre>
 
-</ul>
+<div class="scianimator">
+<div id="bw_fun" style="display: inline-block;">
+</div>
 
+<p></div></p>
+
+<script type="text/javascript">
+  (function($) {
+    $(document).ready(function() {
+      var imgs = Array(50);
+      for (i=0; ; i++) {
+        if (i == imgs.length) break;
+        imgs[i] = "assets/fig/testanimator-bw-fun" + (i + 1) + ".png";
+      }
+      $("#bw_fun").scianimator({
+          "images": imgs,
+          "delay": 200,
+          "controls": ["first", "previous", "play", "next", "last", "loop", "speed"],
+      });
+      $("#bw_fun").scianimator("play");
+    });
+  })(jQuery);
+</script>
+
+</div>
               <div id="disqus_thread"></div>
             </li>
           </ol>
@@ -117,7 +109,7 @@ ul.posts span {
 		</div>
   </div>
 </body>
-  <script src='libraries/frameworks/purus/js/bootstrap.min.js'></script>
+  <script src='../libraries/frameworks/purus/js/bootstrap.min.js'></script>
   <script>
       var disqus_developer = 1;
       var disqus_shortname = 'slidify'; 
@@ -144,11 +136,11 @@ ul.posts span {
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script> -->
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
 </script>
 <!-- Google Prettify -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
-  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script src='../libraries/highlighters/prettify/js/lang-r.js'></script>
   <script>
     var pres = document.getElementsByTagName("pre");
     for (var i=0; i < pres.length; ++i) {
