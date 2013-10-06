@@ -10,3 +10,7 @@ URL: http://github.com/ramnathv/poirot
 navigation: 
   - {item: Home, href: index.html}
   - {item: About, href: about.html}
+  
+# WIDGETS
+disqus:
+  shortname: whereistheshortname

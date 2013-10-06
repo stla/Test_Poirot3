@@ -2,7 +2,7 @@
 title: test animator
 date : 2012-11-30
 --- &lead
-  
+
 <link  rel='stylesheet'
   href="../libraries/widgets/scianimator/css/scianimator.css">
 <script src="../libraries/widgets/scianimator/assets/js/jquery-1.4.4.min.js"></script>
