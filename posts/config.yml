@@ -1,8 +1,8 @@
 mode     : selfcontained
 framework: purus
 github:
-  user: ramnathv
-  repo: poirot
+  user: stla
+  repo: Test_Poirot3
 
 # HIGHLIGHTER SETTINGS
 highlighter: prettify

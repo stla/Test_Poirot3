@@ -88,8 +88,8 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 <canvas id="unnamed_chunk_1textureCanvas" style="display: none;" width="256" height="256">
 <img src="unnamed_chunk_1snapshot.png" alt="unnamed_chunk_1snapshot" width=505/><br>
 	Your browser does not support the HTML5 canvas element.</canvas>
-<!-- ****** points object 81 ****** -->
-<script id="unnamed_chunk_1vshader81" type="x-shader/x-vertex">
+<!-- ****** points object 6 ****** -->
+<script id="unnamed_chunk_1vshader6" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -103,7 +103,7 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_1fshader81" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_1fshader6" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -115,8 +115,8 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** quads object 82 ****** -->
-<script id="unnamed_chunk_1vshader82" type="x-shader/x-vertex">
+<!-- ****** quads object 7 ****** -->
+<script id="unnamed_chunk_1vshader7" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -133,7 +133,7 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	  vNormal = normalize((normMatrix * vec4(aNorm, 1.)).xyz);
 	}
 </script>
-<script id="unnamed_chunk_1fshader82" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_1fshader7" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -160,8 +160,8 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** text object 83 ****** -->
-<script id="unnamed_chunk_1vshader83" type="x-shader/x-vertex">
+<!-- ****** text object 8 ****** -->
+<script id="unnamed_chunk_1vshader8" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -179,7 +179,7 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_1fshader83" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_1fshader8" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -339,60 +339,60 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	             widths:widths, textHeight:textHeight,
 	             offset:offset, skip:skip};
 	   }
-	   // ****** points object 81 ******
-	   var prog81  = gl.createProgram();
-	   gl.attachShader(prog81, getShader( gl, "unnamed_chunk_1vshader81" ));
-	   gl.attachShader(prog81, getShader( gl, "unnamed_chunk_1fshader81" ));
+	   // ****** points object 6 ******
+	   var prog6  = gl.createProgram();
+	   gl.attachShader(prog6, getShader( gl, "unnamed_chunk_1vshader6" ));
+	   gl.attachShader(prog6, getShader( gl, "unnamed_chunk_1fshader6" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog81, 0, "aPos");
-	   gl.bindAttribLocation(prog81, 1, "aCol");
-	   gl.linkProgram(prog81);
+	   gl.bindAttribLocation(prog6, 0, "aPos");
+	   gl.bindAttribLocation(prog6, 1, "aCol");
+	   gl.linkProgram(prog6);
 	   var v=new Float32Array([
 	    0, 0, 0,
 	    -1, 4, 0,
 	    4, 9, 0,
 	    6, 3, 0
 	   ]);
-	   var buf81 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf81);
+	   var buf6 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf6);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc81 = gl.getUniformLocation(prog81,"mvMatrix");
-	   var prMatLoc81 = gl.getUniformLocation(prog81,"prMatrix");
-	   // ****** quads object 82 ******
-	   var prog82  = gl.createProgram();
-	   gl.attachShader(prog82, getShader( gl, "unnamed_chunk_1vshader82" ));
-	   gl.attachShader(prog82, getShader( gl, "unnamed_chunk_1fshader82" ));
+	   var mvMatLoc6 = gl.getUniformLocation(prog6,"mvMatrix");
+	   var prMatLoc6 = gl.getUniformLocation(prog6,"prMatrix");
+	   // ****** quads object 7 ******
+	   var prog7  = gl.createProgram();
+	   gl.attachShader(prog7, getShader( gl, "unnamed_chunk_1vshader7" ));
+	   gl.attachShader(prog7, getShader( gl, "unnamed_chunk_1fshader7" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog82, 0, "aPos");
-	   gl.bindAttribLocation(prog82, 1, "aCol");
-	   gl.linkProgram(prog82);
+	   gl.bindAttribLocation(prog7, 0, "aPos");
+	   gl.bindAttribLocation(prog7, 1, "aCol");
+	   gl.linkProgram(prog7);
 	   var v=new Float32Array([
 	    0, 0, 0, 0, 0, -1,
 	    -1, 4, 0, 0, 0, -1,
 	    4, 9, 0, 0, 0, -1,
 	    6, 3, 0, 0, 0, -1
 	   ]);
-	   var normLoc82 = gl.getAttribLocation(prog82, "aNorm");
+	   var normLoc7 = gl.getAttribLocation(prog7, "aNorm");
 	   var f=new Uint16Array([
 	    0, 1, 2, 0, 2, 3
 	   ]);
-	   var buf82 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf82);
+	   var buf7 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf7);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf82 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf82);
+	   var ibuf7 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf7);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc82 = gl.getUniformLocation(prog82,"mvMatrix");
-	   var prMatLoc82 = gl.getUniformLocation(prog82,"prMatrix");
-	   var normMatLoc82 = gl.getUniformLocation(prog82,"normMatrix");
-	   // ****** text object 83 ******
-	   var prog83  = gl.createProgram();
-	   gl.attachShader(prog83, getShader( gl, "unnamed_chunk_1vshader83" ));
-	   gl.attachShader(prog83, getShader( gl, "unnamed_chunk_1fshader83" ));
+	   var mvMatLoc7 = gl.getUniformLocation(prog7,"mvMatrix");
+	   var prMatLoc7 = gl.getUniformLocation(prog7,"prMatrix");
+	   var normMatLoc7 = gl.getUniformLocation(prog7,"normMatrix");
+	   // ****** text object 8 ******
+	   var prog8  = gl.createProgram();
+	   gl.attachShader(prog8, getShader( gl, "unnamed_chunk_1vshader8" ));
+	   gl.attachShader(prog8, getShader( gl, "unnamed_chunk_1fshader8" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog83, 0, "aPos");
-	   gl.bindAttribLocation(prog83, 1, "aCol");
-	   gl.linkProgram(prog83);
+	   gl.bindAttribLocation(prog8, 0, "aPos");
+	   gl.bindAttribLocation(prog8, 1, "aCol");
+	   gl.linkProgram(prog8);
 	   var texts = [
 	    "a",
 	    "b",
@@ -400,13 +400,13 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	    "d"
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX83 = texinfo.canvasX;
-	   var canvasY83 = texinfo.canvasY;
-	   var ofsLoc83 = gl.getAttribLocation(prog83, "aOfs");
-	   var texture83 = gl.createTexture();
-	   var texLoc83 = gl.getAttribLocation(prog83, "aTexcoord");
-	   var sampler83 = gl.getUniformLocation(prog83,"uSampler");
-    	   handleLoadedTexture(texture83, document.getElementById("unnamed_chunk_1textureCanvas"));
+	   var canvasX8 = texinfo.canvasX;
+	   var canvasY8 = texinfo.canvasY;
+	   var ofsLoc8 = gl.getAttribLocation(prog8, "aOfs");
+	   var texture8 = gl.createTexture();
+	   var texLoc8 = gl.getAttribLocation(prog8, "aTexcoord");
+	   var sampler8 = gl.getUniformLocation(prog8,"uSampler");
+    	   handleLoadedTexture(texture8, document.getElementById("unnamed_chunk_1textureCanvas"));
 	   var v=new Float32Array([
 	    0, 0, -0.5, 0, -0.5, 0.5, 0.5,
 	    0, 0, -0.5, 1, -0.5, 0.5, 0.5,
@@ -440,14 +440,14 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	    8, 9, 10, 8, 10, 11,
 	    12, 13, 14, 12, 14, 15
 	   ]);
-	   var buf83 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf83);
+	   var buf8 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf8);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf83 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf83);
+	   var ibuf8 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf8);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc83 = gl.getUniformLocation(prog83,"mvMatrix");
-	   var prMatLoc83 = gl.getUniformLocation(prog83,"prMatrix");
+	   var mvMatLoc8 = gl.getUniformLocation(prog8,"mvMatrix");
+	   var prMatLoc8 = gl.getUniformLocation(prog8,"prMatrix");
 	   gl.enable(gl.DEPTH_TEST);
 	   gl.depthFunc(gl.LEQUAL);
 	   gl.clearDepth(1.0);
@@ -482,46 +482,46 @@ Schematically, one can imagine ${\cal J}(\mu, \nu)$ as a convex polyhedra embedd
 	     normMatrix.scale( 1, 1, 1 );   
 	     normMatrix.multRight( userMatrix );
 	     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-	     // ****** points object 81 *******
-	     gl.useProgram(prog81);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf81);
-	     gl.uniformMatrix4fv( prMatLoc81, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc81, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** points object 6 *******
+	     gl.useProgram(prog6);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf6);
+	     gl.uniformMatrix4fv( prMatLoc6, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc6, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.POINTS, 0, 4);
-	     // ****** quads object 82 *******
-	     gl.useProgram(prog82);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf82);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf82);
-	     gl.uniformMatrix4fv( prMatLoc82, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc82, false, new Float32Array(mvMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( normMatLoc82, false, new Float32Array(normMatrix.getAsArray()) );
+	     // ****** quads object 7 *******
+	     gl.useProgram(prog7);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf7);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf7);
+	     gl.uniformMatrix4fv( prMatLoc7, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc7, false, new Float32Array(mvMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( normMatLoc7, false, new Float32Array(normMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 1, 0, 1 );
-	     gl.enableVertexAttribArray( normLoc82 );
-	     gl.vertexAttribPointer(normLoc82, 3, gl.FLOAT, false, 24, 12);
+	     gl.enableVertexAttribArray( normLoc7 );
+	     gl.vertexAttribPointer(normLoc7, 3, gl.FLOAT, false, 24, 12);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 24,  0);
 	     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-	     // ****** text object 83 *******
-	     gl.useProgram(prog83);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf83);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf83);
-	     gl.uniformMatrix4fv( prMatLoc83, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc83, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 8 *******
+	     gl.useProgram(prog8);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf8);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf8);
+	     gl.uniformMatrix4fv( prMatLoc8, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc8, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 1, 0, 1 );
-	     gl.enableVertexAttribArray( texLoc83 );
-	     gl.vertexAttribPointer(texLoc83, 2, gl.FLOAT, false, 28, 12);
+	     gl.enableVertexAttribArray( texLoc8 );
+	     gl.vertexAttribPointer(texLoc8, 2, gl.FLOAT, false, 28, 12);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture83);
-	     gl.uniform1i( sampler83, 0);
-	     gl.enableVertexAttribArray( ofsLoc83 );
-	     gl.vertexAttribPointer(ofsLoc83, 2, gl.FLOAT, false, 28, 20);
+	     gl.bindTexture(gl.TEXTURE_2D, texture8);
+	     gl.uniform1i( sampler8, 0);
+	     gl.enableVertexAttribArray( ofsLoc8 );
+	     gl.vertexAttribPointer(ofsLoc8, 2, gl.FLOAT, false, 28, 20);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 28,  0);
 	     gl.drawElements(gl.TRIANGLES, 24, gl.UNSIGNED_SHORT, 0);
 	     gl.flush ();
@@ -667,8 +667,8 @@ $\ell$ is given on the $z$-axis.
 <canvas id="unnamed_chunk_2textureCanvas" style="display: none;" width="256" height="256">
 <img src="unnamed_chunk_2snapshot.png" alt="unnamed_chunk_2snapshot" width=505/><br>
 	Your browser does not support the HTML5 canvas element.</canvas>
-<!-- ****** lines object 85 ****** -->
-<script id="unnamed_chunk_2vshader85" type="x-shader/x-vertex">
+<!-- ****** lines object 10 ****** -->
+<script id="unnamed_chunk_2vshader10" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -681,7 +681,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader85" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader10" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -693,8 +693,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** lines object 86 ****** -->
-<script id="unnamed_chunk_2vshader86" type="x-shader/x-vertex">
+<!-- ****** lines object 11 ****** -->
+<script id="unnamed_chunk_2vshader11" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -707,7 +707,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader86" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader11" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -719,8 +719,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** text object 87 ****** -->
-<script id="unnamed_chunk_2vshader87" type="x-shader/x-vertex">
+<!-- ****** text object 12 ****** -->
+<script id="unnamed_chunk_2vshader12" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -738,7 +738,7 @@ $\ell$ is given on the $z$-axis.
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_2fshader87" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader12" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -756,8 +756,8 @@ $\ell$ is given on the $z$-axis.
 	    gl_FragColor = textureColor;
 	}
 </script> 
-<!-- ****** text object 88 ****** -->
-<script id="unnamed_chunk_2vshader88" type="x-shader/x-vertex">
+<!-- ****** text object 13 ****** -->
+<script id="unnamed_chunk_2vshader13" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -775,7 +775,7 @@ $\ell$ is given on the $z$-axis.
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_2fshader88" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader13" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -793,8 +793,8 @@ $\ell$ is given on the $z$-axis.
 	    gl_FragColor = textureColor;
 	}
 </script> 
-<!-- ****** text object 89 ****** -->
-<script id="unnamed_chunk_2vshader89" type="x-shader/x-vertex">
+<!-- ****** text object 14 ****** -->
+<script id="unnamed_chunk_2vshader14" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -812,7 +812,7 @@ $\ell$ is given on the $z$-axis.
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_2fshader89" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader14" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -830,8 +830,8 @@ $\ell$ is given on the $z$-axis.
 	    gl_FragColor = textureColor;
 	}
 </script> 
-<!-- ****** surface object 90 ****** -->
-<script id="unnamed_chunk_2vshader90" type="x-shader/x-vertex">
+<!-- ****** surface object 15 ****** -->
+<script id="unnamed_chunk_2vshader15" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -848,7 +848,7 @@ $\ell$ is given on the $z$-axis.
 	  vNormal = normalize((normMatrix * vec4(aNorm, 1.)).xyz);
 	}
 </script>
-<script id="unnamed_chunk_2fshader90" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader15" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -875,8 +875,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** lines object 91 ****** -->
-<script id="unnamed_chunk_2vshader91" type="x-shader/x-vertex">
+<!-- ****** lines object 16 ****** -->
+<script id="unnamed_chunk_2vshader16" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -889,7 +889,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader91" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader16" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -901,8 +901,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** points object 92 ****** -->
-<script id="unnamed_chunk_2vshader92" type="x-shader/x-vertex">
+<!-- ****** points object 17 ****** -->
+<script id="unnamed_chunk_2vshader17" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -916,7 +916,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader92" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader17" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -928,8 +928,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** quads object 93 ****** -->
-<script id="unnamed_chunk_2vshader93" type="x-shader/x-vertex">
+<!-- ****** quads object 18 ****** -->
+<script id="unnamed_chunk_2vshader18" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -946,7 +946,7 @@ $\ell$ is given on the $z$-axis.
 	  vNormal = normalize((normMatrix * vec4(aNorm, 1.)).xyz);
 	}
 </script>
-<script id="unnamed_chunk_2fshader93" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader18" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -973,8 +973,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** points object 94 ****** -->
-<script id="unnamed_chunk_2vshader94" type="x-shader/x-vertex">
+<!-- ****** points object 19 ****** -->
+<script id="unnamed_chunk_2vshader19" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -988,7 +988,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader94" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader19" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1000,8 +1000,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** lines object 95 ****** -->
-<script id="unnamed_chunk_2vshader95" type="x-shader/x-vertex">
+<!-- ****** lines object 20 ****** -->
+<script id="unnamed_chunk_2vshader20" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1014,7 +1014,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader95" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader20" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1026,8 +1026,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** lines object 96 ****** -->
-<script id="unnamed_chunk_2vshader96" type="x-shader/x-vertex">
+<!-- ****** lines object 21 ****** -->
+<script id="unnamed_chunk_2vshader21" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1040,7 +1040,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader96" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader21" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1052,35 +1052,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** points object 97 ****** -->
-<script id="unnamed_chunk_2vshader97" type="x-shader/x-vertex">
-	attribute vec3 aPos;
-	attribute vec4 aCol;
-	uniform mat4 mvMatrix;
-	uniform mat4 prMatrix;
-	varying vec4 vCol;
-	varying vec4 vPosition;
-	void main(void) {
-	  vPosition = mvMatrix * vec4(aPos, 1.);
-	  gl_Position = prMatrix * vPosition;
-	  gl_PointSize = 8.;
-	  vCol = aCol;
-	}
-</script>
-<script id="unnamed_chunk_2fshader97" type="x-shader/x-fragment"> 
-	#ifdef GL_ES
-	precision highp float;
-	#endif
-	varying vec4 vCol; // carries alpha
-	varying vec4 vPosition;
-	void main(void) {
-      vec4 colDiff = vCol;
-	  vec4 lighteffect = colDiff;
-	  gl_FragColor = lighteffect;
-	}
-</script> 
-<!-- ****** points object 98 ****** -->
-<script id="unnamed_chunk_2vshader98" type="x-shader/x-vertex">
+<!-- ****** points object 22 ****** -->
+<script id="unnamed_chunk_2vshader22" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1094,7 +1067,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader98" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader22" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1106,8 +1079,35 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** linestrip object 99 ****** -->
-<script id="unnamed_chunk_2vshader99" type="x-shader/x-vertex">
+<!-- ****** points object 23 ****** -->
+<script id="unnamed_chunk_2vshader23" type="x-shader/x-vertex">
+	attribute vec3 aPos;
+	attribute vec4 aCol;
+	uniform mat4 mvMatrix;
+	uniform mat4 prMatrix;
+	varying vec4 vCol;
+	varying vec4 vPosition;
+	void main(void) {
+	  vPosition = mvMatrix * vec4(aPos, 1.);
+	  gl_Position = prMatrix * vPosition;
+	  gl_PointSize = 8.;
+	  vCol = aCol;
+	}
+</script>
+<script id="unnamed_chunk_2fshader23" type="x-shader/x-fragment"> 
+	#ifdef GL_ES
+	precision highp float;
+	#endif
+	varying vec4 vCol; // carries alpha
+	varying vec4 vPosition;
+	void main(void) {
+      vec4 colDiff = vCol;
+	  vec4 lighteffect = colDiff;
+	  gl_FragColor = lighteffect;
+	}
+</script> 
+<!-- ****** linestrip object 24 ****** -->
+<script id="unnamed_chunk_2vshader24" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1120,7 +1120,7 @@ $\ell$ is given on the $z$-axis.
 	  vCol = aCol;
 	}
 </script>
-<script id="unnamed_chunk_2fshader99" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader24" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1132,8 +1132,8 @@ $\ell$ is given on the $z$-axis.
 	  gl_FragColor = lighteffect;
 	}
 </script> 
-<!-- ****** text object 100 ****** -->
-<script id="unnamed_chunk_2vshader100" type="x-shader/x-vertex">
+<!-- ****** text object 25 ****** -->
+<script id="unnamed_chunk_2vshader25" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1151,7 +1151,7 @@ $\ell$ is given on the $z$-axis.
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_2fshader100" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader25" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1169,8 +1169,8 @@ $\ell$ is given on the $z$-axis.
 	    gl_FragColor = textureColor;
 	}
 </script> 
-<!-- ****** text object 101 ****** -->
-<script id="unnamed_chunk_2vshader101" type="x-shader/x-vertex">
+<!-- ****** text object 26 ****** -->
+<script id="unnamed_chunk_2vshader26" type="x-shader/x-vertex">
 	attribute vec3 aPos;
 	attribute vec4 aCol;
 	uniform mat4 mvMatrix;
@@ -1188,7 +1188,7 @@ $\ell$ is given on the $z$-axis.
 	  gl_Position = pos + vec4(aOfs, 0.,0.);
 	}
 </script>
-<script id="unnamed_chunk_2fshader101" type="x-shader/x-fragment"> 
+<script id="unnamed_chunk_2fshader26" type="x-shader/x-fragment"> 
 	#ifdef GL_ES
 	precision highp float;
 	#endif
@@ -1348,63 +1348,63 @@ $\ell$ is given on the $z$-axis.
 	             widths:widths, textHeight:textHeight,
 	             offset:offset, skip:skip};
 	   }
-	   // ****** lines object 85 ******
-	   var prog85  = gl.createProgram();
-	   gl.attachShader(prog85, getShader( gl, "unnamed_chunk_2vshader85" ));
-	   gl.attachShader(prog85, getShader( gl, "unnamed_chunk_2fshader85" ));
+	   // ****** lines object 10 ******
+	   var prog10  = gl.createProgram();
+	   gl.attachShader(prog10, getShader( gl, "unnamed_chunk_2vshader10" ));
+	   gl.attachShader(prog10, getShader( gl, "unnamed_chunk_2fshader10" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog85, 0, "aPos");
-	   gl.bindAttribLocation(prog85, 1, "aCol");
-	   gl.linkProgram(prog85);
+	   gl.bindAttribLocation(prog10, 0, "aPos");
+	   gl.bindAttribLocation(prog10, 1, "aCol");
+	   gl.linkProgram(prog10);
 	   var v=new Float32Array([
 	    -3, -3, -19,
 	    -3, -3, -19,
 	    9, 12, 119,
 	    9, 12, 119
 	   ]);
-	   var buf85 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf85);
+	   var buf10 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf10);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc85 = gl.getUniformLocation(prog85,"mvMatrix");
-	   var prMatLoc85 = gl.getUniformLocation(prog85,"prMatrix");
-	   // ****** lines object 86 ******
-	   var prog86  = gl.createProgram();
-	   gl.attachShader(prog86, getShader( gl, "unnamed_chunk_2vshader86" ));
-	   gl.attachShader(prog86, getShader( gl, "unnamed_chunk_2fshader86" ));
+	   var mvMatLoc10 = gl.getUniformLocation(prog10,"mvMatrix");
+	   var prMatLoc10 = gl.getUniformLocation(prog10,"prMatrix");
+	   // ****** lines object 11 ******
+	   var prog11  = gl.createProgram();
+	   gl.attachShader(prog11, getShader( gl, "unnamed_chunk_2vshader11" ));
+	   gl.attachShader(prog11, getShader( gl, "unnamed_chunk_2fshader11" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog86, 0, "aPos");
-	   gl.bindAttribLocation(prog86, 1, "aCol");
-	   gl.linkProgram(prog86);
+	   gl.bindAttribLocation(prog11, 0, "aPos");
+	   gl.bindAttribLocation(prog11, 1, "aCol");
+	   gl.linkProgram(prog11);
 	   var v=new Float32Array([
 	    -3, -3, -22,
 	    -3, -3, -22,
 	    9, 12, 122,
 	    9, 12, 122
 	   ]);
-	   var buf86 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf86);
+	   var buf11 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf11);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc86 = gl.getUniformLocation(prog86,"mvMatrix");
-	   var prMatLoc86 = gl.getUniformLocation(prog86,"prMatrix");
-	   // ****** text object 87 ******
-	   var prog87  = gl.createProgram();
-	   gl.attachShader(prog87, getShader( gl, "unnamed_chunk_2vshader87" ));
-	   gl.attachShader(prog87, getShader( gl, "unnamed_chunk_2fshader87" ));
+	   var mvMatLoc11 = gl.getUniformLocation(prog11,"mvMatrix");
+	   var prMatLoc11 = gl.getUniformLocation(prog11,"prMatrix");
+	   // ****** text object 12 ******
+	   var prog12  = gl.createProgram();
+	   gl.attachShader(prog12, getShader( gl, "unnamed_chunk_2vshader12" ));
+	   gl.attachShader(prog12, getShader( gl, "unnamed_chunk_2fshader12" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog87, 0, "aPos");
-	   gl.bindAttribLocation(prog87, 1, "aCol");
-	   gl.linkProgram(prog87);
+	   gl.bindAttribLocation(prog12, 0, "aPos");
+	   gl.bindAttribLocation(prog12, 1, "aCol");
+	   gl.linkProgram(prog12);
 	   var texts = [
 	    ""
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX87 = texinfo.canvasX;
-	   var canvasY87 = texinfo.canvasY;
-	   var ofsLoc87 = gl.getAttribLocation(prog87, "aOfs");
-	   var texture87 = gl.createTexture();
-	   var texLoc87 = gl.getAttribLocation(prog87, "aTexcoord");
-	   var sampler87 = gl.getUniformLocation(prog87,"uSampler");
-    	   handleLoadedTexture(texture87, document.getElementById("unnamed_chunk_2textureCanvas"));
+	   var canvasX12 = texinfo.canvasX;
+	   var canvasY12 = texinfo.canvasY;
+	   var ofsLoc12 = gl.getAttribLocation(prog12, "aOfs");
+	   var texture12 = gl.createTexture();
+	   var texLoc12 = gl.getAttribLocation(prog12, "aTexcoord");
+	   var sampler12 = gl.getUniformLocation(prog12,"uSampler");
+    	   handleLoadedTexture(texture12, document.getElementById("unnamed_chunk_2textureCanvas"));
 	   var v=new Float32Array([
 	    3, -5.5425, -46.408, 0, -0.5, 0.5, 0.5,
 	    3, -5.5425, -46.408, 1, -0.5, 0.5, 0.5,
@@ -1423,33 +1423,33 @@ $\ell$ is given on the $z$-axis.
 	   var f=new Uint16Array([
 	    0, 1, 2, 0, 2, 3
 	   ]);
-	   var buf87 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf87);
+	   var buf12 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf12);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf87 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf87);
+	   var ibuf12 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf12);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc87 = gl.getUniformLocation(prog87,"mvMatrix");
-	   var prMatLoc87 = gl.getUniformLocation(prog87,"prMatrix");
-	   // ****** text object 88 ******
-	   var prog88  = gl.createProgram();
-	   gl.attachShader(prog88, getShader( gl, "unnamed_chunk_2vshader88" ));
-	   gl.attachShader(prog88, getShader( gl, "unnamed_chunk_2fshader88" ));
+	   var mvMatLoc12 = gl.getUniformLocation(prog12,"mvMatrix");
+	   var prMatLoc12 = gl.getUniformLocation(prog12,"prMatrix");
+	   // ****** text object 13 ******
+	   var prog13  = gl.createProgram();
+	   gl.attachShader(prog13, getShader( gl, "unnamed_chunk_2vshader13" ));
+	   gl.attachShader(prog13, getShader( gl, "unnamed_chunk_2fshader13" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog88, 0, "aPos");
-	   gl.bindAttribLocation(prog88, 1, "aCol");
-	   gl.linkProgram(prog88);
+	   gl.bindAttribLocation(prog13, 0, "aPos");
+	   gl.bindAttribLocation(prog13, 1, "aCol");
+	   gl.linkProgram(prog13);
 	   var texts = [
 	    ""
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX88 = texinfo.canvasX;
-	   var canvasY88 = texinfo.canvasY;
-	   var ofsLoc88 = gl.getAttribLocation(prog88, "aOfs");
-	   var texture88 = gl.createTexture();
-	   var texLoc88 = gl.getAttribLocation(prog88, "aTexcoord");
-	   var sampler88 = gl.getUniformLocation(prog88,"uSampler");
-    	   handleLoadedTexture(texture88, document.getElementById("unnamed_chunk_2textureCanvas"));
+	   var canvasX13 = texinfo.canvasX;
+	   var canvasY13 = texinfo.canvasY;
+	   var ofsLoc13 = gl.getAttribLocation(prog13, "aOfs");
+	   var texture13 = gl.createTexture();
+	   var texLoc13 = gl.getAttribLocation(prog13, "aTexcoord");
+	   var sampler13 = gl.getUniformLocation(prog13,"uSampler");
+    	   handleLoadedTexture(texture13, document.getElementById("unnamed_chunk_2textureCanvas"));
 	   var v=new Float32Array([
 	    -5.034, 4.5, -46.408, 0, -0.5, 0.5, 0.5,
 	    -5.034, 4.5, -46.408, 1, -0.5, 0.5, 0.5,
@@ -1468,33 +1468,33 @@ $\ell$ is given on the $z$-axis.
 	   var f=new Uint16Array([
 	    0, 1, 2, 0, 2, 3
 	   ]);
-	   var buf88 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf88);
+	   var buf13 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf13);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf88 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf88);
+	   var ibuf13 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf13);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc88 = gl.getUniformLocation(prog88,"mvMatrix");
-	   var prMatLoc88 = gl.getUniformLocation(prog88,"prMatrix");
-	   // ****** text object 89 ******
-	   var prog89  = gl.createProgram();
-	   gl.attachShader(prog89, getShader( gl, "unnamed_chunk_2vshader89" ));
-	   gl.attachShader(prog89, getShader( gl, "unnamed_chunk_2fshader89" ));
+	   var mvMatLoc13 = gl.getUniformLocation(prog13,"mvMatrix");
+	   var prMatLoc13 = gl.getUniformLocation(prog13,"prMatrix");
+	   // ****** text object 14 ******
+	   var prog14  = gl.createProgram();
+	   gl.attachShader(prog14, getShader( gl, "unnamed_chunk_2vshader14" ));
+	   gl.attachShader(prog14, getShader( gl, "unnamed_chunk_2fshader14" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog89, 0, "aPos");
-	   gl.bindAttribLocation(prog89, 1, "aCol");
-	   gl.linkProgram(prog89);
+	   gl.bindAttribLocation(prog14, 0, "aPos");
+	   gl.bindAttribLocation(prog14, 1, "aCol");
+	   gl.linkProgram(prog14);
 	   var texts = [
 	    ""
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX89 = texinfo.canvasX;
-	   var canvasY89 = texinfo.canvasY;
-	   var ofsLoc89 = gl.getAttribLocation(prog89, "aOfs");
-	   var texture89 = gl.createTexture();
-	   var texLoc89 = gl.getAttribLocation(prog89, "aTexcoord");
-	   var sampler89 = gl.getUniformLocation(prog89,"uSampler");
-    	   handleLoadedTexture(texture89, document.getElementById("unnamed_chunk_2textureCanvas"));
+	   var canvasX14 = texinfo.canvasX;
+	   var canvasY14 = texinfo.canvasY;
+	   var ofsLoc14 = gl.getAttribLocation(prog14, "aOfs");
+	   var texture14 = gl.createTexture();
+	   var texLoc14 = gl.getAttribLocation(prog14, "aTexcoord");
+	   var sampler14 = gl.getUniformLocation(prog14,"uSampler");
+    	   handleLoadedTexture(texture14, document.getElementById("unnamed_chunk_2textureCanvas"));
 	   var v=new Float32Array([
 	    -5.034, -5.5425, 50, 0, -0.5, 0.5, 0.5,
 	    -5.034, -5.5425, 50, 1, -0.5, 0.5, 0.5,
@@ -1513,22 +1513,22 @@ $\ell$ is given on the $z$-axis.
 	   var f=new Uint16Array([
 	    0, 1, 2, 0, 2, 3
 	   ]);
-	   var buf89 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf89);
+	   var buf14 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf14);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf89 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf89);
+	   var ibuf14 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf14);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc89 = gl.getUniformLocation(prog89,"mvMatrix");
-	   var prMatLoc89 = gl.getUniformLocation(prog89,"prMatrix");
-	   // ****** surface object 90 ******
-	   var prog90  = gl.createProgram();
-	   gl.attachShader(prog90, getShader( gl, "unnamed_chunk_2vshader90" ));
-	   gl.attachShader(prog90, getShader( gl, "unnamed_chunk_2fshader90" ));
+	   var mvMatLoc14 = gl.getUniformLocation(prog14,"mvMatrix");
+	   var prMatLoc14 = gl.getUniformLocation(prog14,"prMatrix");
+	   // ****** surface object 15 ******
+	   var prog15  = gl.createProgram();
+	   gl.attachShader(prog15, getShader( gl, "unnamed_chunk_2vshader15" ));
+	   gl.attachShader(prog15, getShader( gl, "unnamed_chunk_2fshader15" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog90, 0, "aPos");
-	   gl.bindAttribLocation(prog90, 1, "aCol");
-	   gl.linkProgram(prog90);
+	   gl.bindAttribLocation(prog15, 0, "aPos");
+	   gl.bindAttribLocation(prog15, 1, "aCol");
+	   gl.linkProgram(prog15);
 	   var v=new Float32Array([
 	    -3, -3, -19, 0.5494424, 0.8241633, -0.1373606,
 	    -2.586207, -3, -17.34483, 0.5494424, 0.8241633, -0.1373606,
@@ -2431,8 +2431,8 @@ $\ell$ is given on the $z$-axis.
 	    8.586206, 12, 117.3448, 0.5494428, 0.824163, -0.1373606,
 	    9, 12, 119, 0.5494425, 0.8241632, -0.1373606
 	   ]);
-	   var normLoc90 = gl.getAttribLocation(prog90, "aNorm");
-	   var centers90 = new Float32Array([
+	   var normLoc15 = gl.getAttribLocation(prog15, "aNorm");
+	   var centers15 = new Float32Array([
 	    -2.793103, -2.741379, -16.62069,
 	    -2.37931, -2.741379, -14.96552,
 	    -1.965517, -2.741379, -13.31034,
@@ -3275,7 +3275,7 @@ $\ell$ is given on the $z$-axis.
 	    8.379311, 11.74138, 114.9655,
 	    8.793103, 11.74138, 116.6207
 	   ]);
-	   var f90=new Uint16Array([
+	   var f15=new Uint16Array([
 	    0, 30, 31, 0, 31, 1,
 	    30, 60, 61, 30, 61, 31,
 	    60, 90, 91, 60, 91, 61,
@@ -4118,105 +4118,105 @@ $\ell$ is given on the $z$-axis.
 	    838, 868, 869, 838, 869, 839,
 	    868, 898, 899, 868, 899, 869
 	   ]);
-	   var buf90 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf90);
+	   var buf15 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf15);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf90 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf90);
-	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f90, gl.DYNAMIC_DRAW);
-	   var mvMatLoc90 = gl.getUniformLocation(prog90,"mvMatrix");
-	   var prMatLoc90 = gl.getUniformLocation(prog90,"prMatrix");
-	   var normMatLoc90 = gl.getUniformLocation(prog90,"normMatrix");
-	   // ****** lines object 91 ******
-	   var prog91  = gl.createProgram();
-	   gl.attachShader(prog91, getShader( gl, "unnamed_chunk_2vshader91" ));
-	   gl.attachShader(prog91, getShader( gl, "unnamed_chunk_2fshader91" ));
+	   var ibuf15 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf15);
+	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f15, gl.DYNAMIC_DRAW);
+	   var mvMatLoc15 = gl.getUniformLocation(prog15,"mvMatrix");
+	   var prMatLoc15 = gl.getUniformLocation(prog15,"prMatrix");
+	   var normMatLoc15 = gl.getUniformLocation(prog15,"normMatrix");
+	   // ****** lines object 16 ******
+	   var prog16  = gl.createProgram();
+	   gl.attachShader(prog16, getShader( gl, "unnamed_chunk_2vshader16" ));
+	   gl.attachShader(prog16, getShader( gl, "unnamed_chunk_2fshader16" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog91, 0, "aPos");
-	   gl.bindAttribLocation(prog91, 1, "aCol");
-	   gl.linkProgram(prog91);
+	   gl.bindAttribLocation(prog16, 0, "aPos");
+	   gl.bindAttribLocation(prog16, 1, "aCol");
+	   gl.linkProgram(prog16);
 	   var v=new Float32Array([
 	    0, 0, 0,
 	    0, 0, 80
 	   ]);
-	   var buf91 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf91);
+	   var buf16 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf16);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc91 = gl.getUniformLocation(prog91,"mvMatrix");
-	   var prMatLoc91 = gl.getUniformLocation(prog91,"prMatrix");
-	   // ****** points object 92 ******
-	   var prog92  = gl.createProgram();
-	   gl.attachShader(prog92, getShader( gl, "unnamed_chunk_2vshader92" ));
-	   gl.attachShader(prog92, getShader( gl, "unnamed_chunk_2fshader92" ));
+	   var mvMatLoc16 = gl.getUniformLocation(prog16,"mvMatrix");
+	   var prMatLoc16 = gl.getUniformLocation(prog16,"prMatrix");
+	   // ****** points object 17 ******
+	   var prog17  = gl.createProgram();
+	   gl.attachShader(prog17, getShader( gl, "unnamed_chunk_2vshader17" ));
+	   gl.attachShader(prog17, getShader( gl, "unnamed_chunk_2fshader17" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog92, 0, "aPos");
-	   gl.bindAttribLocation(prog92, 1, "aCol");
-	   gl.linkProgram(prog92);
+	   gl.bindAttribLocation(prog17, 0, "aPos");
+	   gl.bindAttribLocation(prog17, 1, "aCol");
+	   gl.linkProgram(prog17);
 	   var v=new Float32Array([
 	    0, 0, 0,
 	    -1, 4, 0,
 	    4, 9, 0,
 	    6, 3, 0
 	   ]);
-	   var buf92 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf92);
+	   var buf17 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf17);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc92 = gl.getUniformLocation(prog92,"mvMatrix");
-	   var prMatLoc92 = gl.getUniformLocation(prog92,"prMatrix");
-	   // ****** quads object 93 ******
-	   var prog93  = gl.createProgram();
-	   gl.attachShader(prog93, getShader( gl, "unnamed_chunk_2vshader93" ));
-	   gl.attachShader(prog93, getShader( gl, "unnamed_chunk_2fshader93" ));
+	   var mvMatLoc17 = gl.getUniformLocation(prog17,"mvMatrix");
+	   var prMatLoc17 = gl.getUniformLocation(prog17,"prMatrix");
+	   // ****** quads object 18 ******
+	   var prog18  = gl.createProgram();
+	   gl.attachShader(prog18, getShader( gl, "unnamed_chunk_2vshader18" ));
+	   gl.attachShader(prog18, getShader( gl, "unnamed_chunk_2fshader18" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog93, 0, "aPos");
-	   gl.bindAttribLocation(prog93, 1, "aCol");
-	   gl.linkProgram(prog93);
+	   gl.bindAttribLocation(prog18, 0, "aPos");
+	   gl.bindAttribLocation(prog18, 1, "aCol");
+	   gl.linkProgram(prog18);
 	   var v=new Float32Array([
 	    0, 0, 0, 0, 0, -1,
 	    -1, 4, 0, 0, 0, -1,
 	    4, 9, 0, 0, 0, -1,
 	    6, 3, 0, 0, 0, -1
 	   ]);
-	   var normLoc93 = gl.getAttribLocation(prog93, "aNorm");
+	   var normLoc18 = gl.getAttribLocation(prog18, "aNorm");
 	   var f=new Uint16Array([
 	    0, 1, 2, 0, 2, 3
 	   ]);
-	   var buf93 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf93);
+	   var buf18 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf18);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf93 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf93);
+	   var ibuf18 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf18);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc93 = gl.getUniformLocation(prog93,"mvMatrix");
-	   var prMatLoc93 = gl.getUniformLocation(prog93,"prMatrix");
-	   var normMatLoc93 = gl.getUniformLocation(prog93,"normMatrix");
-	   // ****** points object 94 ******
-	   var prog94  = gl.createProgram();
-	   gl.attachShader(prog94, getShader( gl, "unnamed_chunk_2vshader94" ));
-	   gl.attachShader(prog94, getShader( gl, "unnamed_chunk_2fshader94" ));
+	   var mvMatLoc18 = gl.getUniformLocation(prog18,"mvMatrix");
+	   var prMatLoc18 = gl.getUniformLocation(prog18,"prMatrix");
+	   var normMatLoc18 = gl.getUniformLocation(prog18,"normMatrix");
+	   // ****** points object 19 ******
+	   var prog19  = gl.createProgram();
+	   gl.attachShader(prog19, getShader( gl, "unnamed_chunk_2vshader19" ));
+	   gl.attachShader(prog19, getShader( gl, "unnamed_chunk_2fshader19" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog94, 0, "aPos");
-	   gl.bindAttribLocation(prog94, 1, "aCol");
-	   gl.linkProgram(prog94);
+	   gl.bindAttribLocation(prog19, 0, "aPos");
+	   gl.bindAttribLocation(prog19, 1, "aCol");
+	   gl.linkProgram(prog19);
 	   var v=new Float32Array([
 	    0, 0, 11,
 	    -1, 4, 31,
 	    4, 9, 81,
 	    6, 3, 53
 	   ]);
-	   var buf94 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf94);
+	   var buf19 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf19);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc94 = gl.getUniformLocation(prog94,"mvMatrix");
-	   var prMatLoc94 = gl.getUniformLocation(prog94,"prMatrix");
-	   // ****** lines object 95 ******
-	   var prog95  = gl.createProgram();
-	   gl.attachShader(prog95, getShader( gl, "unnamed_chunk_2vshader95" ));
-	   gl.attachShader(prog95, getShader( gl, "unnamed_chunk_2fshader95" ));
+	   var mvMatLoc19 = gl.getUniformLocation(prog19,"mvMatrix");
+	   var prMatLoc19 = gl.getUniformLocation(prog19,"prMatrix");
+	   // ****** lines object 20 ******
+	   var prog20  = gl.createProgram();
+	   gl.attachShader(prog20, getShader( gl, "unnamed_chunk_2vshader20" ));
+	   gl.attachShader(prog20, getShader( gl, "unnamed_chunk_2fshader20" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog95, 0, "aPos");
-	   gl.bindAttribLocation(prog95, 1, "aCol");
-	   gl.linkProgram(prog95);
+	   gl.bindAttribLocation(prog20, 0, "aPos");
+	   gl.bindAttribLocation(prog20, 1, "aCol");
+	   gl.linkProgram(prog20);
 	   var v=new Float32Array([
 	    0, 0, 0,
 	    0, 0, 11,
@@ -4227,19 +4227,19 @@ $\ell$ is given on the $z$-axis.
 	    6, 3, 0,
 	    6, 3, 53
 	   ]);
-	   var buf95 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf95);
+	   var buf20 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf20);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc95 = gl.getUniformLocation(prog95,"mvMatrix");
-	   var prMatLoc95 = gl.getUniformLocation(prog95,"prMatrix");
-	   // ****** lines object 96 ******
-	   var prog96  = gl.createProgram();
-	   gl.attachShader(prog96, getShader( gl, "unnamed_chunk_2vshader96" ));
-	   gl.attachShader(prog96, getShader( gl, "unnamed_chunk_2fshader96" ));
+	   var mvMatLoc20 = gl.getUniformLocation(prog20,"mvMatrix");
+	   var prMatLoc20 = gl.getUniformLocation(prog20,"prMatrix");
+	   // ****** lines object 21 ******
+	   var prog21  = gl.createProgram();
+	   gl.attachShader(prog21, getShader( gl, "unnamed_chunk_2vshader21" ));
+	   gl.attachShader(prog21, getShader( gl, "unnamed_chunk_2fshader21" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog96, 0, "aPos");
-	   gl.bindAttribLocation(prog96, 1, "aCol");
-	   gl.linkProgram(prog96);
+	   gl.bindAttribLocation(prog21, 0, "aPos");
+	   gl.bindAttribLocation(prog21, 1, "aCol");
+	   gl.linkProgram(prog21);
 	   var v=new Float32Array([
 	    0, 0, 11,
 	    0, 0, 11,
@@ -4250,74 +4250,74 @@ $\ell$ is given on the $z$-axis.
 	    6, 3, 53,
 	    0, 0, 53
 	   ]);
-	   var buf96 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf96);
+	   var buf21 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf21);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc96 = gl.getUniformLocation(prog96,"mvMatrix");
-	   var prMatLoc96 = gl.getUniformLocation(prog96,"prMatrix");
-	   // ****** points object 97 ******
-	   var prog97  = gl.createProgram();
-	   gl.attachShader(prog97, getShader( gl, "unnamed_chunk_2vshader97" ));
-	   gl.attachShader(prog97, getShader( gl, "unnamed_chunk_2fshader97" ));
+	   var mvMatLoc21 = gl.getUniformLocation(prog21,"mvMatrix");
+	   var prMatLoc21 = gl.getUniformLocation(prog21,"prMatrix");
+	   // ****** points object 22 ******
+	   var prog22  = gl.createProgram();
+	   gl.attachShader(prog22, getShader( gl, "unnamed_chunk_2vshader22" ));
+	   gl.attachShader(prog22, getShader( gl, "unnamed_chunk_2fshader22" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog97, 0, "aPos");
-	   gl.bindAttribLocation(prog97, 1, "aCol");
-	   gl.linkProgram(prog97);
+	   gl.bindAttribLocation(prog22, 0, "aPos");
+	   gl.bindAttribLocation(prog22, 1, "aCol");
+	   gl.linkProgram(prog22);
 	   var v=new Float32Array([
 	    2.25, 4, 0,
 	    2.25, 4, 44,
 	    0, 0, 44
 	   ]);
-	   var buf97 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf97);
+	   var buf22 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf22);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc97 = gl.getUniformLocation(prog97,"mvMatrix");
-	   var prMatLoc97 = gl.getUniformLocation(prog97,"prMatrix");
-	   // ****** points object 98 ******
-	   var prog98  = gl.createProgram();
-	   gl.attachShader(prog98, getShader( gl, "unnamed_chunk_2vshader98" ));
-	   gl.attachShader(prog98, getShader( gl, "unnamed_chunk_2fshader98" ));
+	   var mvMatLoc22 = gl.getUniformLocation(prog22,"mvMatrix");
+	   var prMatLoc22 = gl.getUniformLocation(prog22,"prMatrix");
+	   // ****** points object 23 ******
+	   var prog23  = gl.createProgram();
+	   gl.attachShader(prog23, getShader( gl, "unnamed_chunk_2vshader23" ));
+	   gl.attachShader(prog23, getShader( gl, "unnamed_chunk_2fshader23" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog98, 0, "aPos");
-	   gl.bindAttribLocation(prog98, 1, "aCol");
-	   gl.linkProgram(prog98);
+	   gl.bindAttribLocation(prog23, 0, "aPos");
+	   gl.bindAttribLocation(prog23, 1, "aCol");
+	   gl.linkProgram(prog23);
 	   var v=new Float32Array([
 	    0, 0, 11,
 	    0, 0, 31,
 	    0, 0, 81,
 	    0, 0, 53
 	   ]);
-	   var buf98 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf98);
+	   var buf23 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf23);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc98 = gl.getUniformLocation(prog98,"mvMatrix");
-	   var prMatLoc98 = gl.getUniformLocation(prog98,"prMatrix");
-	   // ****** linestrip object 99 ******
-	   var prog99  = gl.createProgram();
-	   gl.attachShader(prog99, getShader( gl, "unnamed_chunk_2vshader99" ));
-	   gl.attachShader(prog99, getShader( gl, "unnamed_chunk_2fshader99" ));
+	   var mvMatLoc23 = gl.getUniformLocation(prog23,"mvMatrix");
+	   var prMatLoc23 = gl.getUniformLocation(prog23,"prMatrix");
+	   // ****** linestrip object 24 ******
+	   var prog24  = gl.createProgram();
+	   gl.attachShader(prog24, getShader( gl, "unnamed_chunk_2vshader24" ));
+	   gl.attachShader(prog24, getShader( gl, "unnamed_chunk_2fshader24" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog99, 0, "aPos");
-	   gl.bindAttribLocation(prog99, 1, "aCol");
-	   gl.linkProgram(prog99);
+	   gl.bindAttribLocation(prog24, 0, "aPos");
+	   gl.bindAttribLocation(prog24, 1, "aCol");
+	   gl.linkProgram(prog24);
 	   var v=new Float32Array([
 	    2.25, 4, 0,
 	    2.25, 4, 44,
 	    0, 0, 44
 	   ]);
-	   var buf99 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf99);
+	   var buf24 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf24);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var mvMatLoc99 = gl.getUniformLocation(prog99,"mvMatrix");
-	   var prMatLoc99 = gl.getUniformLocation(prog99,"prMatrix");
-	   // ****** text object 100 ******
-	   var prog100  = gl.createProgram();
-	   gl.attachShader(prog100, getShader( gl, "unnamed_chunk_2vshader100" ));
-	   gl.attachShader(prog100, getShader( gl, "unnamed_chunk_2fshader100" ));
+	   var mvMatLoc24 = gl.getUniformLocation(prog24,"mvMatrix");
+	   var prMatLoc24 = gl.getUniformLocation(prog24,"prMatrix");
+	   // ****** text object 25 ******
+	   var prog25  = gl.createProgram();
+	   gl.attachShader(prog25, getShader( gl, "unnamed_chunk_2vshader25" ));
+	   gl.attachShader(prog25, getShader( gl, "unnamed_chunk_2fshader25" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog100, 0, "aPos");
-	   gl.bindAttribLocation(prog100, 1, "aCol");
-	   gl.linkProgram(prog100);
+	   gl.bindAttribLocation(prog25, 0, "aPos");
+	   gl.bindAttribLocation(prog25, 1, "aCol");
+	   gl.linkProgram(prog25);
 	   var texts = [
 	    "a",
 	    "b",
@@ -4326,13 +4326,13 @@ $\ell$ is given on the $z$-axis.
 	    "x"
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX100 = texinfo.canvasX;
-	   var canvasY100 = texinfo.canvasY;
-	   var ofsLoc100 = gl.getAttribLocation(prog100, "aOfs");
-	   var texture100 = gl.createTexture();
-	   var texLoc100 = gl.getAttribLocation(prog100, "aTexcoord");
-	   var sampler100 = gl.getUniformLocation(prog100,"uSampler");
-    	   handleLoadedTexture(texture100, document.getElementById("unnamed_chunk_2textureCanvas"));
+	   var canvasX25 = texinfo.canvasX;
+	   var canvasY25 = texinfo.canvasY;
+	   var ofsLoc25 = gl.getAttribLocation(prog25, "aOfs");
+	   var texture25 = gl.createTexture();
+	   var texLoc25 = gl.getAttribLocation(prog25, "aTexcoord");
+	   var sampler25 = gl.getUniformLocation(prog25,"uSampler");
+    	   handleLoadedTexture(texture25, document.getElementById("unnamed_chunk_2textureCanvas"));
 	   var v=new Float32Array([
 	    0, 0, -6, 1, 0, 0, 1, 0, -0.5, 0.5, 0.5,
 	    0, 0, -6, 1, 0, 0, 1, 1, -0.5, 0.5, 0.5,
@@ -4371,22 +4371,22 @@ $\ell$ is given on the $z$-axis.
 	    12, 13, 14, 12, 14, 15,
 	    16, 17, 18, 16, 18, 19
 	   ]);
-	   var buf100 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf100);
+	   var buf25 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf25);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf100 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf100);
+	   var ibuf25 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf25);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc100 = gl.getUniformLocation(prog100,"mvMatrix");
-	   var prMatLoc100 = gl.getUniformLocation(prog100,"prMatrix");
-	   // ****** text object 101 ******
-	   var prog101  = gl.createProgram();
-	   gl.attachShader(prog101, getShader( gl, "unnamed_chunk_2vshader101" ));
-	   gl.attachShader(prog101, getShader( gl, "unnamed_chunk_2fshader101" ));
+	   var mvMatLoc25 = gl.getUniformLocation(prog25,"mvMatrix");
+	   var prMatLoc25 = gl.getUniformLocation(prog25,"prMatrix");
+	   // ****** text object 26 ******
+	   var prog26  = gl.createProgram();
+	   gl.attachShader(prog26, getShader( gl, "unnamed_chunk_2vshader26" ));
+	   gl.attachShader(prog26, getShader( gl, "unnamed_chunk_2fshader26" ));
 	   //  Force aPos to location 0, aCol to location 1 
-	   gl.bindAttribLocation(prog101, 0, "aPos");
-	   gl.bindAttribLocation(prog101, 1, "aCol");
-	   gl.linkProgram(prog101);
+	   gl.bindAttribLocation(prog26, 0, "aPos");
+	   gl.bindAttribLocation(prog26, 1, "aCol");
+	   gl.linkProgram(prog26);
 	   var texts = [
 	    "l(a)",
 	    "l(b)",
@@ -4395,13 +4395,13 @@ $\ell$ is given on the $z$-axis.
 	    "l(x)"
 	   ];
 	   var texinfo = drawTextToCanvas(texts, 1);	 
-	   var canvasX101 = texinfo.canvasX;
-	   var canvasY101 = texinfo.canvasY;
-	   var ofsLoc101 = gl.getAttribLocation(prog101, "aOfs");
-	   var texture101 = gl.createTexture();
-	   var texLoc101 = gl.getAttribLocation(prog101, "aTexcoord");
-	   var sampler101 = gl.getUniformLocation(prog101,"uSampler");
-    	   handleLoadedTexture(texture101, document.getElementById("unnamed_chunk_2textureCanvas"));
+	   var canvasX26 = texinfo.canvasX;
+	   var canvasY26 = texinfo.canvasY;
+	   var ofsLoc26 = gl.getAttribLocation(prog26, "aOfs");
+	   var texture26 = gl.createTexture();
+	   var texLoc26 = gl.getAttribLocation(prog26, "aTexcoord");
+	   var sampler26 = gl.getUniformLocation(prog26,"uSampler");
+    	   handleLoadedTexture(texture26, document.getElementById("unnamed_chunk_2textureCanvas"));
 	   var v=new Float32Array([
 	    -0.35, -0.35, 11, 1, 0, 0, 1, 0, -0.5, 0.5, 0.5,
 	    -0.35, -0.35, 11, 1, 0, 0, 1, 1, -0.5, 0.5, 0.5,
@@ -4440,14 +4440,14 @@ $\ell$ is given on the $z$-axis.
 	    12, 13, 14, 12, 14, 15,
 	    16, 17, 18, 16, 18, 19
 	   ]);
-	   var buf101 = gl.createBuffer();
-	   gl.bindBuffer(gl.ARRAY_BUFFER, buf101);
+	   var buf26 = gl.createBuffer();
+	   gl.bindBuffer(gl.ARRAY_BUFFER, buf26);
 	   gl.bufferData(gl.ARRAY_BUFFER, v, gl.STATIC_DRAW);
-	   var ibuf101 = gl.createBuffer();
-	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf101);
+	   var ibuf26 = gl.createBuffer();
+	   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf26);
 	   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.STATIC_DRAW);
-	   var mvMatLoc101 = gl.getUniformLocation(prog101,"mvMatrix");
-	   var prMatLoc101 = gl.getUniformLocation(prog101,"prMatrix");
+	   var mvMatLoc26 = gl.getUniformLocation(prog26,"mvMatrix");
+	   var prMatLoc26 = gl.getUniformLocation(prog26,"prMatrix");
 	   gl.enable(gl.DEPTH_TEST);
 	   gl.depthFunc(gl.LEQUAL);
 	   gl.clearDepth(1.0);
@@ -4485,214 +4485,214 @@ $\ell$ is given on the $z$-axis.
 	     prmvMatrix.load(mvMatrix);
 	     prmvMatrix.multRight( prMatrix );
 	     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-	     // ****** lines object 85 *******
-	     gl.useProgram(prog85);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf85);
-	     gl.uniformMatrix4fv( prMatLoc85, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc85, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** lines object 10 *******
+	     gl.useProgram(prog10);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf10);
+	     gl.uniformMatrix4fv( prMatLoc10, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc10, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINES, 0, 4);
-	     // ****** lines object 86 *******
-	     gl.useProgram(prog86);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf86);
-	     gl.uniformMatrix4fv( prMatLoc86, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc86, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** lines object 11 *******
+	     gl.useProgram(prog11);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf11);
+	     gl.uniformMatrix4fv( prMatLoc11, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc11, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINES, 0, 4);
-	     // ****** text object 87 *******
-	     gl.useProgram(prog87);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf87);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf87);
-	     gl.uniformMatrix4fv( prMatLoc87, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc87, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 12 *******
+	     gl.useProgram(prog12);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf12);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf12);
+	     gl.uniformMatrix4fv( prMatLoc12, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc12, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
-	     gl.enableVertexAttribArray( texLoc87 );
-	     gl.vertexAttribPointer(texLoc87, 2, gl.FLOAT, false, 28, 12);
+	     gl.enableVertexAttribArray( texLoc12 );
+	     gl.vertexAttribPointer(texLoc12, 2, gl.FLOAT, false, 28, 12);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture87);
-	     gl.uniform1i( sampler87, 0);
-	     gl.enableVertexAttribArray( ofsLoc87 );
-	     gl.vertexAttribPointer(ofsLoc87, 2, gl.FLOAT, false, 28, 20);
+	     gl.bindTexture(gl.TEXTURE_2D, texture12);
+	     gl.uniform1i( sampler12, 0);
+	     gl.enableVertexAttribArray( ofsLoc12 );
+	     gl.vertexAttribPointer(ofsLoc12, 2, gl.FLOAT, false, 28, 20);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 28,  0);
 	     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-	     // ****** text object 88 *******
-	     gl.useProgram(prog88);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf88);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf88);
-	     gl.uniformMatrix4fv( prMatLoc88, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc88, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 13 *******
+	     gl.useProgram(prog13);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf13);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf13);
+	     gl.uniformMatrix4fv( prMatLoc13, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc13, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
-	     gl.enableVertexAttribArray( texLoc88 );
-	     gl.vertexAttribPointer(texLoc88, 2, gl.FLOAT, false, 28, 12);
+	     gl.enableVertexAttribArray( texLoc13 );
+	     gl.vertexAttribPointer(texLoc13, 2, gl.FLOAT, false, 28, 12);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture88);
-	     gl.uniform1i( sampler88, 0);
-	     gl.enableVertexAttribArray( ofsLoc88 );
-	     gl.vertexAttribPointer(ofsLoc88, 2, gl.FLOAT, false, 28, 20);
+	     gl.bindTexture(gl.TEXTURE_2D, texture13);
+	     gl.uniform1i( sampler13, 0);
+	     gl.enableVertexAttribArray( ofsLoc13 );
+	     gl.vertexAttribPointer(ofsLoc13, 2, gl.FLOAT, false, 28, 20);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 28,  0);
 	     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-	     // ****** text object 89 *******
-	     gl.useProgram(prog89);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf89);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf89);
-	     gl.uniformMatrix4fv( prMatLoc89, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc89, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 14 *******
+	     gl.useProgram(prog14);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf14);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf14);
+	     gl.uniformMatrix4fv( prMatLoc14, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc14, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
-	     gl.enableVertexAttribArray( texLoc89 );
-	     gl.vertexAttribPointer(texLoc89, 2, gl.FLOAT, false, 28, 12);
+	     gl.enableVertexAttribArray( texLoc14 );
+	     gl.vertexAttribPointer(texLoc14, 2, gl.FLOAT, false, 28, 12);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture89);
-	     gl.uniform1i( sampler89, 0);
-	     gl.enableVertexAttribArray( ofsLoc89 );
-	     gl.vertexAttribPointer(ofsLoc89, 2, gl.FLOAT, false, 28, 20);
+	     gl.bindTexture(gl.TEXTURE_2D, texture14);
+	     gl.uniform1i( sampler14, 0);
+	     gl.enableVertexAttribArray( ofsLoc14 );
+	     gl.vertexAttribPointer(ofsLoc14, 2, gl.FLOAT, false, 28, 20);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 28,  0);
 	     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-	     // ****** lines object 91 *******
-	     gl.useProgram(prog91);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf91);
-	     gl.uniformMatrix4fv( prMatLoc91, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc91, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** lines object 16 *******
+	     gl.useProgram(prog16);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf16);
+	     gl.uniformMatrix4fv( prMatLoc16, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc16, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 0, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINES, 0, 2);
-	     // ****** points object 92 *******
-	     gl.useProgram(prog92);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf92);
-	     gl.uniformMatrix4fv( prMatLoc92, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc92, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** points object 17 *******
+	     gl.useProgram(prog17);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf17);
+	     gl.uniformMatrix4fv( prMatLoc17, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc17, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.POINTS, 0, 4);
-	     // ****** quads object 93 *******
-	     gl.useProgram(prog93);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf93);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf93);
-	     gl.uniformMatrix4fv( prMatLoc93, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc93, false, new Float32Array(mvMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( normMatLoc93, false, new Float32Array(normMatrix.getAsArray()) );
+	     // ****** quads object 18 *******
+	     gl.useProgram(prog18);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf18);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf18);
+	     gl.uniformMatrix4fv( prMatLoc18, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc18, false, new Float32Array(mvMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( normMatLoc18, false, new Float32Array(normMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 1, 0, 1 );
-	     gl.enableVertexAttribArray( normLoc93 );
-	     gl.vertexAttribPointer(normLoc93, 3, gl.FLOAT, false, 24, 12);
+	     gl.enableVertexAttribArray( normLoc18 );
+	     gl.vertexAttribPointer(normLoc18, 3, gl.FLOAT, false, 24, 12);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 24,  0);
 	     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-	     // ****** points object 94 *******
-	     gl.useProgram(prog94);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf94);
-	     gl.uniformMatrix4fv( prMatLoc94, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc94, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** points object 19 *******
+	     gl.useProgram(prog19);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf19);
+	     gl.uniformMatrix4fv( prMatLoc19, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc19, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.POINTS, 0, 4);
-	     // ****** lines object 95 *******
-	     gl.useProgram(prog95);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf95);
-	     gl.uniformMatrix4fv( prMatLoc95, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc95, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** lines object 20 *******
+	     gl.useProgram(prog20);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf20);
+	     gl.uniformMatrix4fv( prMatLoc20, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc20, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINES, 0, 8);
-	     // ****** lines object 96 *******
-	     gl.useProgram(prog96);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf96);
-	     gl.uniformMatrix4fv( prMatLoc96, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc96, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** lines object 21 *******
+	     gl.useProgram(prog21);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf21);
+	     gl.uniformMatrix4fv( prMatLoc21, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc21, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINES, 0, 8);
-	     // ****** points object 97 *******
-	     gl.useProgram(prog97);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf97);
-	     gl.uniformMatrix4fv( prMatLoc97, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc97, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** points object 22 *******
+	     gl.useProgram(prog22);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf22);
+	     gl.uniformMatrix4fv( prMatLoc22, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc22, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 1, 0, 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.POINTS, 0, 3);
-	     // ****** points object 98 *******
-	     gl.useProgram(prog98);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf98);
-	     gl.uniformMatrix4fv( prMatLoc98, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc98, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** points object 23 *******
+	     gl.useProgram(prog23);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf23);
+	     gl.uniformMatrix4fv( prMatLoc23, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc23, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 1, 0, 0, 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.POINTS, 0, 4);
-	     // ****** linestrip object 99 *******
-	     gl.useProgram(prog99);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf99);
-	     gl.uniformMatrix4fv( prMatLoc99, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc99, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** linestrip object 24 *******
+	     gl.useProgram(prog24);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf24);
+	     gl.uniformMatrix4fv( prMatLoc24, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc24, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0, 1, 0, 1 );
 	     gl.lineWidth( 1 );
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 12,  0);
 	     gl.drawArrays(gl.LINE_STRIP, 0, 3);
-	     // ****** text object 100 *******
-	     gl.useProgram(prog100);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf100);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf100);
-	     gl.uniformMatrix4fv( prMatLoc100, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc100, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 25 *******
+	     gl.useProgram(prog25);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf25);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf25);
+	     gl.uniformMatrix4fv( prMatLoc25, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc25, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.enableVertexAttribArray( colLoc );
 	     gl.vertexAttribPointer(colLoc, 4, gl.FLOAT, false, 44, 12);
-	     gl.enableVertexAttribArray( texLoc100 );
-	     gl.vertexAttribPointer(texLoc100, 2, gl.FLOAT, false, 44, 28);
+	     gl.enableVertexAttribArray( texLoc25 );
+	     gl.vertexAttribPointer(texLoc25, 2, gl.FLOAT, false, 44, 28);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture100);
-	     gl.uniform1i( sampler100, 0);
-	     gl.enableVertexAttribArray( ofsLoc100 );
-	     gl.vertexAttribPointer(ofsLoc100, 2, gl.FLOAT, false, 44, 36);
+	     gl.bindTexture(gl.TEXTURE_2D, texture25);
+	     gl.uniform1i( sampler25, 0);
+	     gl.enableVertexAttribArray( ofsLoc25 );
+	     gl.vertexAttribPointer(ofsLoc25, 2, gl.FLOAT, false, 44, 36);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 44,  0);
 	     gl.drawElements(gl.TRIANGLES, 30, gl.UNSIGNED_SHORT, 0);
-	     // ****** text object 101 *******
-	     gl.useProgram(prog101);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf101);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf101);
-	     gl.uniformMatrix4fv( prMatLoc101, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc101, false, new Float32Array(mvMatrix.getAsArray()) );
+	     // ****** text object 26 *******
+	     gl.useProgram(prog26);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf26);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf26);
+	     gl.uniformMatrix4fv( prMatLoc26, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc26, false, new Float32Array(mvMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     gl.enableVertexAttribArray( colLoc );
 	     gl.vertexAttribPointer(colLoc, 4, gl.FLOAT, false, 44, 12);
-	     gl.enableVertexAttribArray( texLoc101 );
-	     gl.vertexAttribPointer(texLoc101, 2, gl.FLOAT, false, 44, 28);
+	     gl.enableVertexAttribArray( texLoc26 );
+	     gl.vertexAttribPointer(texLoc26, 2, gl.FLOAT, false, 44, 28);
 	     gl.activeTexture(gl.TEXTURE0);
-	     gl.bindTexture(gl.TEXTURE_2D, texture101);
-	     gl.uniform1i( sampler101, 0);
-	     gl.enableVertexAttribArray( ofsLoc101 );
-	     gl.vertexAttribPointer(ofsLoc101, 2, gl.FLOAT, false, 44, 36);
+	     gl.bindTexture(gl.TEXTURE_2D, texture26);
+	     gl.uniform1i( sampler26, 0);
+	     gl.enableVertexAttribArray( ofsLoc26 );
+	     gl.vertexAttribPointer(ofsLoc26, 2, gl.FLOAT, false, 44, 36);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 44,  0);
 	     gl.drawElements(gl.TRIANGLES, 30, gl.UNSIGNED_SHORT, 0);
   	     // ***** Transparent objects next ****
@@ -4700,41 +4700,41 @@ $\ell$ is given on the $z$-axis.
 	     gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA,
 	                          gl.ONE, gl.ONE);
 	     gl.enable(gl.BLEND);
-	     // ****** surface object 90 *******
-	     gl.useProgram(prog90);
-	     gl.bindBuffer(gl.ARRAY_BUFFER, buf90);
-	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf90);
-	     gl.uniformMatrix4fv( prMatLoc90, false, new Float32Array(prMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( mvMatLoc90, false, new Float32Array(mvMatrix.getAsArray()) );
-	     gl.uniformMatrix4fv( normMatLoc90, false, new Float32Array(normMatrix.getAsArray()) );
+	     // ****** surface object 15 *******
+	     gl.useProgram(prog15);
+	     gl.bindBuffer(gl.ARRAY_BUFFER, buf15);
+	     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf15);
+	     gl.uniformMatrix4fv( prMatLoc15, false, new Float32Array(prMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( mvMatLoc15, false, new Float32Array(mvMatrix.getAsArray()) );
+	     gl.uniformMatrix4fv( normMatLoc15, false, new Float32Array(normMatrix.getAsArray()) );
 	     gl.enableVertexAttribArray( posLoc );
 	     var depths = new Float32Array(841);
 	     var faces = new Array(841);
 	     for(var i=0; i<841; i++) {
-	       var z = prmvMatrix.m13*centers90[3*i] 
-	             + prmvMatrix.m23*centers90[3*i+1]
-	             + prmvMatrix.m33*centers90[3*i+2]
+	       var z = prmvMatrix.m13*centers15[3*i] 
+	             + prmvMatrix.m23*centers15[3*i+1]
+	             + prmvMatrix.m33*centers15[3*i+2]
 	             + prmvMatrix.m43;
-	       var w = prmvMatrix.m14*centers90[3*i] 
-	             + prmvMatrix.m24*centers90[3*i+1]
-	             + prmvMatrix.m34*centers90[3*i+2]
+	       var w = prmvMatrix.m14*centers15[3*i] 
+	             + prmvMatrix.m24*centers15[3*i+1]
+	             + prmvMatrix.m34*centers15[3*i+2]
 	             + prmvMatrix.m44;
 	       depths[i] = z/w;
 	       faces[i] = i;
 	     }
 	     var depthsort = function(i,j) { return depths[j] - depths[i] }
 	     faces.sort(depthsort);
-	     var f = new Uint16Array(f90.length);
+	     var f = new Uint16Array(f15.length);
 	     for (var i=0; i<841; i++) {
 	       for (var j=0; j<6; j++) {
-	         f[6*i + j] = f90[6*faces[i] + j];
+	         f[6*i + j] = f15[6*faces[i] + j];
 	       }
 	     }	     
 	     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, f, gl.DYNAMIC_DRAW);
 	     gl.disableVertexAttribArray( colLoc );
 	     gl.vertexAttrib4f( colLoc, 0.6784314, 0.8470588, 0.9019608, 0.4980392 );
-	     gl.enableVertexAttribArray( normLoc90 );
-	     gl.vertexAttribPointer(normLoc90, 3, gl.FLOAT, false, 24, 12);
+	     gl.enableVertexAttribArray( normLoc15 );
+	     gl.vertexAttribPointer(normLoc15, 3, gl.FLOAT, false, 24, 12);
 	     gl.vertexAttribPointer(posLoc,  3, gl.FLOAT, false, 24,  0);
 	     gl.drawElements(gl.TRIANGLES, 5046, gl.UNSIGNED_SHORT, 0);
 	     gl.flush ();
