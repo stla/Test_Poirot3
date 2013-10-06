@@ -12,5 +12,6 @@ navigation:
   - {item: About, href: about.html}
   
 # WIDGETS
+widgets: [disqus]
 disqus:
   shortname: whereistheshortname
